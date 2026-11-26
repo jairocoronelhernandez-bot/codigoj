@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- "initial-scale=1.0" ES EL ZOON QUE VA A TENER LA PAGINA EN LOS DISPOSITIVOS -->
+    <title>Pisoctesti | Acceso</title> <!-- "LO QUE SALE EN LA PESTAÑA DE ARRIBA-->
+    <link rel="stylesheet" href="estilos.css"> <!-- "SIRVE PARA CONECTAR EL HTM CON CSS"-->
+</head>
+
+<body>
+
+ 
+   
+
+ <!-- PANTALLA DE LOGIN -->
+    <div id="login" class="login-container">  <!-- CONTENEDOR-->
+        <div class="login-box">
+
+            <img src="BANNER_PSICOTESTI.png" alt="Logo" class="logo-login">
+
+            <h1>BIENVENIDO</h1>
+            <p>INICIO DE SESIÓN</p>
+
+            <label>USUARIO</label>  <!-- "LABEL" SIGNIFICA ETIQUETA-->
+            <input type="text" id="usuario" placeholder="Ingresa tu usuario">  <!-- "IMPUT" ENTRADA D E DATIS, ESA LINEA HACE QUE NO SE VE EL CONTENIDO-->
+
+            <label>CONTRASEÑA</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+            <button onclick="iniciarSesion()">INGRESAR</button>
+
+
+          
+
+            <p id="mensaje"></p>
+
+        </div>
+    </div>
+
+
+    
+
+
+
+
+     
+
+
+
+    <!-- PANTALLA PRINCIPAL -->
+    <div id="sistema" class="sistema-container" style="display:none;">  <!-- DIV ES CONTENEDOR, id="sistema" ESTO ASIGNA UN IDENTIFICADOR, class="sistema-container" ESTO ES PARA MODIFICAR EN CSS, style="display:none;" ESO HACE QUE EL CONTENEDOR APARESACA OCULTO  -->
+
+        <header class="encabezado"> <!-- HARDER ES LA CINTA DE ENCABEZADO, CLASS ENCABEZADO SIRVE PARA DAR STILO EN CSS  -->
+           
+            <h2>PSICOTESTI</h2>
+           
+            <div>
+
+                Usuario: <span id="usuarioActivo"></span>
+                <button class="btn-salir" onclick="cerrarSesion()">
+                ⏻ SALIR</button>
+                <button class="btn-regresar" onclick="mostrarInicio()">
+                ⮪ REGRESAR
+                </button>
+
+            </div>
+
+        </header>
+
+        <div class="layout">
+
+            <aside class="menu-lateral">
+
+                <button onclick="mostrarSeccion(1)">BASE</button>
+                <button onclick="mostrarSeccion(2)">2</button>
+                <button onclick="mostrarSeccion(3)">3</button>
+                <button onclick="mostrarSeccion(4)">4</button>
+
+            </aside>
+
+            <main class="contenido">
+
+                <section id="seccion-inicio" class="seccion">
+                   <h3>REGISTRO DE CANDIDATOS</h3>
+               
+                   <!-- REGISTRO DE CANDIDATOS (label es una etiqueta e imput es una caja para que se escriba) -->
+
+                    <div id="pro" class="container">  <!-- CONTENEDOR-->
+                         
+                        <div id="registro" class="container">  <!-- CONTENEDOR-->
+                         
+                            <div>
+                                   
+                                <label for="cliente">     </label>
+                                   <input type="text" id="cliente" placeholder="Escribe el nombre del cedis o cliente">
+
+                                 <br><br>
+
+                                <label for="vacante">      </label> <!-- LISTA DESPLEGABLE-->
+
+                                 <select id="vacante">
+                                   <option value="">Seleccione una vacante</option>
+                                   <option value="OPERADOR">OPERADOR</option>
+                                   <option value="AYUDANTE GENERAL">AYUDANTE GENERAL</option>
+                                   <option value="MONTACARGUISTA">MONTACARGUISTA</option>
+                                   <option value="SUPERVISOR">SUPERVISOR</option>
+                                   <option value="CHOFER">CHOFER</option>
+                                 </select>
+
+                                 <br><br>
+
+                                <label for="nombre">      </label>
+                                   <input type="text" id="nombre" placeholder="Escribe el nombre del candidato">
+
+                                 <br><br>
+
+                                <label for="estudios">         </label>
+                                  
+                                 <select id="estudios">
+                                   <option value="">Seleccione el nivel de estudios</option>
+                                   <option value="PRIMARIA">PRIMARIA</option>
+                                   <option value="SECUNDARIA">SECUNDARIA</option>
+                                   <option value="BACHILLERATO">BACHILLERATO</option>
+                                   <option value="LIC.">LIC.</option>
+                                   <option value="MAESTRIA">MAESTRIA</option>
+                                 </select>
+
+                                 <br><br>
+
+                                <label for="entrevista">       </label>
+                                   <input type="date" id="entrevista" placeholder="Selecciona la fecha de entrevista">
+
+                                 <br><br>
+
+                                <label for="hora">             </label>
+                                  
+                                 <select id="hora">
+                                   <option value="">Seleccione la hora de entrevista</option>
+                                   <option value="7:00">7:00 a.m.</option>
+                                   <option value="7:30">7:30 a.m.</option>
+                                   <option value="8:00">8:00 a.m.</option>
+                                   <option value="8:30">8:30 a.m.</option>
+                                   <option value="9:00">9:00 a.m.</option>
+                                 </select>
+
+                                 <br><br>
+
+                                <label for="edad">              </label>
+                                   <input type="text" id="edad" placeholder="Escribe la edad del candidato">
+
+                                 <br><br>
+
+                                <label for="contacto">          </label>
+                                  <input type="text" id="contacto" placeholder="Escribe el número de contacto">
+
+                                 <br><br>
+
+                                <label for="domicilio">          </label>
+                                   <input type="text" id="domicilio" placeholder="Escribe el domicilio">
+
+                                 <br><br>
+
+                                <label for="experiencia">        </label>
+                                  <input type="text" id="experiencia" placeholder="Escribe la experiencia">
+
+                                  <br><br>
+
+                                       <button id="guardar">GUARDAR</button>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                </section>
+
+
+
+                            
+
+
+
+
+
+
+
+
+
+               
+               
+               
+                   
+                <!-- CONTENEDOR DEL CUESTIONARIO CLEVAER -->
+                     
+<section id="seccion-1" class="seccion" style="display:none;">
+
+    <h1>BASE DE RECLUTAMIENTO</h1>
+
+    <div class="contenedor-base">
+
+        <div class="tabla-scroll">
+
+            <table id="tabla-base">    <!-- <table id="tabla-base"> --> 
+                <thead>
+                    <tr>
+                        <th>CEDIS</th>
+                        <th>VACANTE</th>
+                        <th>NOMBRE</th>
+                        <th>ESTUDIOS</th>
+                        <th>ENTREVISTA</th>
+                        <th>HORA DE ENTREVISTA</th>
+                        <th>EDAD</th>
+                        <th>TELEFONO</th>
+                        <th>DOMICILIO</th>
+                        <th>PAGADO</th>
+                        <th>SI SE PRESENTO</th>
+                        <th>NO SE PRESENTO</th>
+                        <th>CONTRATADO</th>
+                        <th>REAGENDA</th>
+                        <th>OBSERVACIONES</th>
+                    </tr>
+                </thead>
+
+           
+
+  
+
+
+                <tbody>
+
+                    <tr>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+
+                       
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+
+
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+
+
+                        <td contenteditable="true"></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+ </section>
+
+
+
+
+
+
+
+
+
+ <section id="seccion-2" class="seccion" style="display:none;">
+                    <h1>VENTANA 2</h1>
+
+
+
+                           
+
+
+
+
+
+                            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+                <section id="seccion-3" class="seccion" style="display:none;">
+                    <h1>VENTANA 3</h1>
+                </section>
+
+                <section id="seccion-4" class="seccion" style="display:none;">
+                    <h1>VENTANA 4</h1>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+
+    <!-- NUEVA VENTANA DE VACANTES -->
+    <div id="ventana-vacantes" style="display:none;">
+
+        <header class="encabezado">
+            <h2>MODULO DE VACANTES</h2>
+
+            <button onclick="regresarPrincipal()">
+                REGRESAR
+            </button>
+        </header>
+
+        <div class="layout-vacantes">
+
+            <!-- CONTENIDO IZQUIERDO -->
+            <main class="contenido-vacantes">
+
+                <section id="vacante-inicio">
+                    <h1>ADMINISTRACIÓN DE VACANTES</h1>
+                    <p>Selecciona una opción del menú derecho.</p>
+                </section>
+
+                <section id="vacante-1" class="subseccion" style="display:none;">
+                    <h1>AYUDANTE GENERAL DE ALMACEN
+                        
+                         <h1>LLLLLLLL</h1>
+
+
+
+                         <H1>JJJJJJJJJJ</H1>
+
+                       
+
+                    </h1>
+                    <p>Contenido de la opción 1.</p>
+                </section>
+
+                
+
+
+          
+
+        </div>
+    </div>
+
+    <script src="sistema.js"></script>
+
+</body>
+</html>
